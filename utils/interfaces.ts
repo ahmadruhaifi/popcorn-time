@@ -13,7 +13,7 @@ export interface MovieData {
 
 export interface HomeProps {
   searchParams: {
-    pageNumber: string;
+    page: string;
   };
 }
 

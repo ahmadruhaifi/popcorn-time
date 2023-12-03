@@ -22,9 +22,9 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages }) => {
 
   useEffect(() => {
     if (pathName === "/") {
-      router.push(`/?pageNumber=${pageNumber}`);
+      router.push(`/?page=${pageNumber}`);
     } else {
-      router.push(`${pathName}/?pageNumber=${pageNumber}`);
+      router.push(`${pathName}/?page=${pageNumber}`);
     }
   }, [pageNumber, router, pathName]);
 
