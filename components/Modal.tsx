@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { format } from 'date-fns';
 
 interface ModalProps {
   isOpen: boolean;
@@ -55,7 +56,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, movie }) => {
             <span className="font-bold">Synopsis:</span> {movie.overview}
           </p>
           <p className="text-sm text-gray-500 mb-2">
-            <span className="font-bold">Release date:</span> {movie.release_date}
+            <span className="font-bold">Release date:</span> {format(new Date(movie.release_date), 'dd/MM/yyyy')}
           </p>
         </div>
         {/* Cast details */}

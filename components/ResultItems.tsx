@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Card from "./Card";
 import Image from "next/image";
+import { format } from 'date-fns';
 import { FaRegThumbsUp } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 import Modal from './Modal';
@@ -32,6 +33,11 @@ const ResultItems: React.FC<ResultItemsProps> = ({ results }) => {
     setIsModalOpen(false);
   };
 
+  // Format date
+  const formattedDate = results?.release_date
+    ? format(new Date(results.release_date), 'dd/MM/yyyy')
+    : 'Date not available';
+
   return (
     <Card>
       <div onClick={openModal}>
@@ -52,7 +58,7 @@ const ResultItems: React.FC<ResultItemsProps> = ({ results }) => {
             {results?.title || results?.original_title}
           </h2>
           <div className="flex justify-between items-center flex-wrap">
-            <p className="mt-1">{results?.release_date}</p>
+            <p className="mt-1">{formattedDate}</p>
             <p className="flex items-center mt-1 mx-1">
               <FaRegThumbsUp className="mr-1 text-cyan-500" />
               {results?.vote_count}
