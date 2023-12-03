@@ -5,22 +5,7 @@ import { format } from 'date-fns';
 import { FaRegThumbsUp } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 import Modal from './Modal';
-
-interface Result {
-  id: string;
-  backdrop_path?: string;
-  poster_path?: string;
-  overview?: string;
-  title?: string;
-  original_title?: string;
-  release_date?: string;
-  vote_count?: number;
-  vote_average?: number;
-}
-
-interface ResultItemsProps {
-  results: Result;
-}
+import { ResultItemsProps } from "../utils/interfaces"
 
 const ResultItems: React.FC<ResultItemsProps> = ({ results }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);

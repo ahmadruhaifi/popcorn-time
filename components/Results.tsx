@@ -1,9 +1,6 @@
 import React from "react";
 import ResultItems from "./ResultItems";
-
-interface ResultsProps {
-  results: Array<{ id: string;}>;
-}
+import { ResultsProps } from "../utils/interfaces"
 
 const Results: React.FC<ResultsProps> = ({ results }) => {
   return (

@@ -1,25 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { format } from 'date-fns';
-
-interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  movie: Movie;
-}
-
-interface Movie {
-  id: string;
-  title: string;
-  overview: string;
-  release_date: string;
-}
-
-interface Actor {
-  profile_path: string | null;
-  name: string;
-  character: string;
-}
+import { ModalProps, Actor } from "../utils/interfaces"
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, movie }) => {
   const [cast, setCast] = useState<Actor[]>([]);

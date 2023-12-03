@@ -2,10 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
-
-interface PaginationProps {
-  totalPages: number;
-}
+import { PaginationProps } from "../utils/interfaces"
 
 const Pagination: React.FC<PaginationProps> = ({ totalPages }) => {
   const router = useRouter();

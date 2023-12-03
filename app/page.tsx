@@ -3,19 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Results from "../components/Results";
 import Pagination from "../components/Pagination";
-
-interface MovieData {
-  results: any[];
-  total_results?: number;
-  total_pages?: number;
-  page?: number;
-}
-
-interface HomeProps {
-  searchParams: {
-    page: string;
-  };
-}
+import { MovieData, HomeProps } from "../utils/interfaces"
 
 const Home: React.FC<HomeProps> = ({ searchParams }) => {
   const [data, setData] = useState<MovieData | null>(null);
