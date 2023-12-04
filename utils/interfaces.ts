@@ -67,3 +67,8 @@ export interface FilterProps {
   setSelectedRating: (rating: number) => void;
   genres: { id: number; name: string }[];
 }
+
+export interface SortProps {
+  sortCriteria: string;
+  setSortCriteria: (criteria: string) => void;
+}
