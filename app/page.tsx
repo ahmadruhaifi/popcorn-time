@@ -17,7 +17,7 @@ const Home: React.FC<HomeProps> = ({ searchParams }) => {
   useEffect(() => {
     const fetchGenres = async () => {
       try {
-        const res = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.NEXT_PUBLIC_API_KEY}`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/genre/movie/list?api_key=${process.env.NEXT_PUBLIC_API_KEY}`);
 
         if (!res.ok) throw new Error("Unable to retrieve genres.");
 
@@ -35,7 +35,7 @@ const Home: React.FC<HomeProps> = ({ searchParams }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let apiEndpoint = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&page=${pageNumber}`;
+        let apiEndpoint = `${process.env.NEXT_PUBLIC_API_URL}/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&page=${pageNumber}`;
 
         if (selectedGenre) {
           apiEndpoint += `&with_genres=${selectedGenre}`;
