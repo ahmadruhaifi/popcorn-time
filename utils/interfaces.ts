@@ -59,3 +59,11 @@ export interface PaginationProps {
 export interface ResultsProps {
   results: Array<{ id: string }>;
 }
+
+export interface FilterProps {
+  selectedGenre: string;
+  setSelectedGenre: (genre: string) => void;
+  selectedRating: number;
+  setSelectedRating: (rating: number) => void;
+  genres: { id: number; name: string }[];
+}
