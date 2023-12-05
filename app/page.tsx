@@ -37,7 +37,11 @@ const Home: React.FC<HomeProps> = ({ searchParams }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let apiEndpoint = `${process.env.NEXT_PUBLIC_API_URL}/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&page=${pageNumber}&primary_release_date.gte=2023-12-01`;
+        const today = new Date().toISOString().split('T')[0];
+        let apiEndpoint = `${process.env.NEXT_PUBLIC_API_URL}/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}`;
+        apiEndpoint += `&page=${pageNumber}`;
+        apiEndpoint += `&primary_release_date.gte=2023-11-15`;
+        apiEndpoint += `&primary_release_date.lte=${today}`;
 
         if (selectedGenre) {
           apiEndpoint += `&with_genres=${selectedGenre}`;
